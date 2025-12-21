@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/app_assets.dart';
 import 'package:islami/core/app_colors.dart';
+import 'package:islami/screens/Home/taps/hadeth_tap.dart';
+import 'package:islami/screens/Home/taps/quran_tap.dart';
+import 'package:islami/screens/Home/taps/radio_tap.dart';
+import 'package:islami/screens/Home/taps/sebha_tap.dart';
+import 'package:islami/screens/Home/taps/time_tap.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home screen";
@@ -13,16 +18,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+  List<String> backgrounds = [
+    AppAssets.quranBg,
+    AppAssets.hadethBg,
+    AppAssets.sebhaBg,
+    AppAssets.radioBg,
+    AppAssets.timeBg,
+  ];
+  List taps = [QuranScreen(), HadethTap(), SebhaTap(), RadioTap(), TimeTap()];
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Image.asset(
-          AppAssets.quranBg,
+          backgrounds[selectedIndex],
           width: double.infinity,
           height: double.infinity,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
         Scaffold(
           bottomNavigationBar: Theme(
@@ -67,6 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
               // showUnselectedLabels: true,
             ),
           ),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ListView(
+              children: [
+                Center(child: Image(image: AssetImage(AppAssets.islamiTop))),
+                taps[selectedIndex],
+              ],
+            ),
+          ),
         ),
       ],
     );
@@ -80,14 +102,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return BottomNavigationBarItem(
       icon: index == selectedIndex
           ? Container(
-          height: 35,
-          width: 60,
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(32, 32, 32, 0.6),
-            borderRadius: BorderRadius.circular(66),
-
-          ),
-          child: ImageIcon(AssetImage(iconName)))
+              height: 35,
+              width: 60,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(32, 32, 32, 0.6),
+                borderRadius: BorderRadius.circular(66),
+              ),
+              child: ImageIcon(AssetImage(iconName)),
+            )
           : ImageIcon(AssetImage(iconName)),
       label: label,
     );

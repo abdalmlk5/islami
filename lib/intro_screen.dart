@@ -2,50 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/core/app_colors.dart';
 
-import '../core/app_styles.dart';
-import 'Home/home_screen.dart';
+import 'core/app_styles.dart';
+import 'screens/Home/home_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   static const String routeName = "intro screen";
 
   List<PageViewModel> listPagesViewModel = [
     PageViewModel(
-      titleWidget: Text("Welcome To Islmi App", style: AppStyles.titleStyle),
+      titleWidget: Text("Welcome To Islmi App", style: AppStyles.primary24),
       body: '',
       image: Image.asset("assets/images/intro frame 1.png"),
     ),
     PageViewModel(
-      titleWidget: Text("Welcome To Islami", style: AppStyles.titleStyle),
+      titleWidget: Text("Welcome To Islami", style: AppStyles.primary24),
       bodyWidget: Text(
         "We Are Very Excited To Have You In Our Community",
-        style: AppStyles.bodyStyle,
+        style: AppStyles.primary20,
         textAlign: TextAlign.center,
       ),
       image: Image.asset("assets/images/intro frame 2.png"),
     ),
     PageViewModel(
-      titleWidget: Text("Reading the Quran", style: AppStyles.titleStyle),
+      titleWidget: Text("Reading the Quran", style: AppStyles.primary24),
       bodyWidget: Text(
         "Read, and your Lord is the Most Generous",
-        style: AppStyles.bodyStyle,
+        style: AppStyles.primary20,
         textAlign: TextAlign.center,
       ),
       image: Image.asset("assets/images/intro frame 3.png"),
     ),
     PageViewModel(
-      titleWidget: Text("Bearish", style: AppStyles.titleStyle),
+      titleWidget: Text("Bearish", style: AppStyles.primary24),
       bodyWidget: Text(
         "Praise the name of your Lord, the Most High",
-        style: AppStyles.bodyStyle,
+        style: AppStyles.primary20,
         textAlign: TextAlign.center,
       ),
       image: Image.asset("assets/images/intro frame 4.png"),
     ),
     PageViewModel(
-      titleWidget: Text("Holy Quran Radio", style: AppStyles.titleStyle),
+      titleWidget: Text("Holy Quran Radio", style: AppStyles.primary24),
       bodyWidget: Text(
         "You can listen to the Holy Quran Radio through the application for free and easily",
-        style: AppStyles.bodyStyle,
+        style: AppStyles.primary20,
         textAlign: TextAlign.center,
       ),
       image: Image.asset("assets/images/intro frame 5.png"),
@@ -62,16 +62,16 @@ class IntroScreen extends StatelessWidget {
       globalHeader: Image.asset("assets/images/islami top.png"),
       bodyPadding: EdgeInsets.only(top: 266),
       showNextButton: true,
-      next: const Text("Next", style: AppStyles.bodyStyle),
+      next: const Text("Next", style: AppStyles.primary20),
       showDoneButton: true,
-      done: const Text("Done", style: AppStyles.bodyStyle),
+      done: const Text("Done", style: AppStyles.primary20),
       onDone: () {
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       showBackButton: true,
-      back: const Text("Back", style: AppStyles.bodyStyle),
+      back: const Text("Back", style: AppStyles.primary20),
       showSkipButton: true,
-      skip: const Text("Skip", style: AppStyles.bodyStyle),
+      skip: const Text("Skip", style: AppStyles.primary20),
       onSkip: () {
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
