@@ -37,6 +37,8 @@ class QuranScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20),
+        Text("Most Recent", style: AppStyles.white16),
+        SizedBox(height: 10),
         SizedBox(
           height: 150,
           child: ListView.separated(
@@ -47,11 +49,8 @@ class QuranScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10),
-
         Text("Suras List", style: AppStyles.white16),
-
         SizedBox(height: 10),
-
         ListView.separated(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),

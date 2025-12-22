@@ -3,7 +3,7 @@ class SuraModel {
   late final String nameAR;
   late final String nameEN;
   late final String verses;
-  
+
   SuraModel({required this.index}) {
     nameAR = surasNameAR[index];
     nameEN = surasNameEN[index];
