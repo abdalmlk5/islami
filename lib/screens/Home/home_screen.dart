@@ -38,6 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: ListView(
+              children: [
+                Center(child: Image(image: AssetImage(AppAssets.islamiTop))),
+                taps[selectedIndex],
+              ],
+            ),
+          ),
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(canvasColor: AppColors.primary),
             child: BottomNavigationBar(
@@ -77,16 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
               selectedItemColor: Colors.white,
               unselectedItemColor: AppColors.black,
-              // showUnselectedLabels: true,
-            ),
-          ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: ListView(
-              children: [
-                Center(child: Image(image: AssetImage(AppAssets.islamiTop))),
-                taps[selectedIndex],
-              ],
             ),
           ),
         ),

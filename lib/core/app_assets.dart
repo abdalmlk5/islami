@@ -11,4 +11,7 @@ class AppAssets {
   static const String radioIcon = "assets/images/icon_radio.png";
   static const String timeIcon = "assets/images/icon_time.png";
   static const String mostRecentImage = "assets/images/img_most_recent.png";
+  static const String cornerDecoration = "assets/images/corner decoration.png";
+  static const String bottomDecoration = "assets/images/bottom_decoration.png";
+  static const String versesFrame = "assets/images/verses frame.png";
 }

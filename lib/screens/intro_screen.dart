@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/core/app_colors.dart';
 
-import 'core/app_styles.dart';
-import 'screens/Home/home_screen.dart';
+import '../core/app_styles.dart';
+import 'Home/home_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   static const String routeName = "intro screen";
 
-  List<PageViewModel> listPagesViewModel = [
+  final List<PageViewModel> listPagesViewModel = [
     PageViewModel(
       titleWidget: Text("Welcome To Islmi App", style: AppStyles.primary24),
       body: '',
