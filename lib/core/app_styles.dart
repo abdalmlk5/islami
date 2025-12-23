@@ -28,4 +28,9 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.black,
   );
+  static const TextStyle black20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
 }

@@ -9,6 +9,12 @@ import '../../../models/sura_model.dart';
 
 class QuranScreen extends StatelessWidget {
   final sura1 = SuraModel(index: 0);
+  List<SuraModel> mostRecentList = [
+    SuraModel(index: 3),
+    SuraModel(index: 1),
+    SuraModel(index: 2),
+    SuraModel(index: 0),
+  ];
 
   QuranScreen({super.key});
 
@@ -43,9 +49,10 @@ class QuranScreen extends StatelessWidget {
           height: 150,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => MostRecentItem(sura: sura1),
+            itemBuilder: (context, index) =>
+                MostRecentItem(sura: mostRecentList[index]),
             separatorBuilder: (context, index) => SizedBox(width: 10),
-            itemCount: 114,
+            itemCount: mostRecentList.length,
           ),
         ),
         SizedBox(height: 10),
