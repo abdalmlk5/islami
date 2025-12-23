@@ -62,6 +62,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/files/Suras/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -204,8 +205,8 @@ flutter_native_splash:
     # hide notif bar on android. ios already hides it by default.
     # Has no effect in web since web has no notification bar.
     #  fullscreen: true                # default false
-    # if you dont want to hide notif bar, for android just set this to false,
-    # but for ios, add this to your flutter main():
+  # if you dont want to hide notif bar, for android just set this to false,
+  # but for ios, add this to your flutter main():
   # WidgetsFlutterBinding.ensureInitialized();
   # SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
 
