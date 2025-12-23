@@ -66,7 +66,13 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   ),
                   SizedBox(height: 30),
                   Expanded(
-                    child: separatedVerses
+                    child: versesList.isEmpty
+                        ? Center(
+                            child: CircularProgressIndicator(
+                              color: AppColors.primary,
+                            ),
+                          )
+                        : separatedVerses
                         ? ListView.separated(
                             itemBuilder: (context, index) => Container(
                               constraints: BoxConstraints(
@@ -119,9 +125,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     );
     versesList = fileContent.split("\n");
     for (int i = 1; i < versesList.length - 1; i++) {
-      verses += "${versesList[i - 1]}[$i]";
-      print(verses);
+      verses += "${versesList[i - 1]}[$i] ";
     }
+    await Future.delayed(Duration(seconds: 1));
     setState(() {});
   }
 }
