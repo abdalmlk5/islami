@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/app_assets.dart';
 import 'package:islami/core/app_colors.dart';
-import 'package:islami/screens/Home/taps/hadeth_tap.dart';
-import 'package:islami/screens/Home/taps/quran_tap.dart';
-import 'package:islami/screens/Home/taps/radio_tap.dart';
-import 'package:islami/screens/Home/taps/sebha_tap.dart';
-import 'package:islami/screens/Home/taps/time_tap.dart';
+import 'package:islami/screens/Home/tabs/hadeth_tab.dart';
+import 'package:islami/screens/Home/tabs/quran_tab.dart';
+import 'package:islami/screens/Home/tabs/radio_tab.dart';
+import 'package:islami/screens/Home/tabs/sebha_tab.dart';
+import 'package:islami/screens/Home/tabs/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home screen";
@@ -18,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+
   List<String> backgrounds = [
     AppAssets.quranBg,
     AppAssets.hadethBg,
@@ -29,6 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight = MediaQuery.of(context).size.height;
+
     return Stack(
       children: [
         Image.asset(
@@ -39,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Scaffold(
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
             child: ListView(
               children: [
                 Center(child: Image(image: AssetImage(AppAssets.islamiTop))),

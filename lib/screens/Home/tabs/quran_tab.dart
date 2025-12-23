@@ -8,7 +8,6 @@ import '../../../items/suras_list_item.dart';
 import '../../../models/sura_model.dart';
 
 class QuranScreen extends StatelessWidget {
-  final sura1 = SuraModel(index: 0);
   List<SuraModel> mostRecentList = [
     SuraModel(index: 3),
     SuraModel(index: 1),
@@ -20,10 +19,13 @@ class QuranScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: screenHeight * .015),
         TextField(
           decoration: InputDecoration(
             hintText: "Sura Name",
@@ -42,9 +44,9 @@ class QuranScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: screenHeight * .015),
         Text("Most Recent", style: AppStyles.white16),
-        SizedBox(height: 10),
+        SizedBox(height: screenHeight * .015),
         SizedBox(
           height: 150,
           child: ListView.separated(
@@ -55,9 +57,9 @@ class QuranScreen extends StatelessWidget {
             itemCount: mostRecentList.length,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: screenHeight * .015),
         Text("Suras List", style: AppStyles.white16),
-        SizedBox(height: 10),
+        SizedBox(height: screenHeight * .015),
         ListView.separated(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
