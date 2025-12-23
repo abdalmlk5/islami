@@ -14,4 +14,6 @@ class AppAssets {
   static const String cornerDecoration = "assets/images/corner decoration.png";
   static const String bottomDecoration = "assets/images/bottom_decoration.png";
   static const String versesFrame = "assets/images/verses frame.png";
+  static const String sebhaBody = "assets/images/sebha body.png";
+  static const String sebhaHead = "assets/images/sebha head.png";
 }

@@ -23,6 +23,11 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.white,
   );
+  static const TextStyle white36 = TextStyle(
+    fontSize: 36,
+    fontWeight: FontWeight.bold,
+    color: AppColors.white,
+  );
   static const TextStyle black24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
