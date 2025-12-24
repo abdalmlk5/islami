@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/app_assets.dart';
 import 'package:islami/core/app_styles.dart';
+import 'package:islami/core/cache_helper.dart';
 import 'package:islami/models/sura_model.dart';
 
 import '../screens/quran/sura_details_screen.dart';
 
 class SurasListItem extends StatelessWidget {
   final SuraModel sura;
+  final Function onSuraOpen;
 
-  const SurasListItem({super.key, required this.sura});
+  const SurasListItem({
+    super.key,
+    required this.sura,
+    required this.onSuraOpen,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        CacheHelper.saveSurasList(sura.index);
+        onSuraOpen();
+
         Navigator.pushNamed(
           context,
           SuraDetailsScreen.routeName,
           arguments: sura,
         );
+        print("done");
       },
       child: ListTile(
         contentPadding: EdgeInsets.zero,

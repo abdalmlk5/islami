@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/app_styles.dart';
+import 'package:islami/core/cache_helper.dart';
 import 'package:islami/items/most_recent_item.dart';
 
 import '../../../core/app_assets.dart';
@@ -7,15 +8,28 @@ import '../../../core/app_colors.dart';
 import '../../../items/suras_list_item.dart';
 import '../../../models/sura_model.dart';
 
-class QuranScreen extends StatelessWidget {
-  List<SuraModel> mostRecentList = [
-    SuraModel(index: 3),
-    SuraModel(index: 1),
-    SuraModel(index: 2),
-    SuraModel(index: 0),
-  ];
+class QuranScreen extends StatefulWidget {
+  const QuranScreen({super.key});
 
-  QuranScreen({super.key});
+  @override
+  State<QuranScreen> createState() => _QuranScreenState();
+}
+
+class _QuranScreenState extends State<QuranScreen> {
+  late List<String> mostRecentIndexList;
+
+  void lodeRecentSuras() {
+    setState(() {
+      mostRecentIndexList = CacheHelper.getSurasList() ?? [];
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    lodeRecentSuras();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +65,12 @@ class QuranScreen extends StatelessWidget {
           height: 150,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) =>
-                MostRecentItem(sura: mostRecentList[index]),
+            itemBuilder: (context, index) => MostRecentItem(
+              onSuraOpen: lodeRecentSuras,
+              sura: SuraModel(index: int.parse(mostRecentIndexList[index])),
+            ),
             separatorBuilder: (context, index) => SizedBox(width: 10),
-            itemCount: mostRecentList.length,
+            itemCount: mostRecentIndexList.length,
           ),
         ),
         SizedBox(height: screenHeight * .015),
@@ -64,7 +80,10 @@ class QuranScreen extends StatelessWidget {
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return SurasListItem(sura: SuraModel(index: index));
+            return SurasListItem(
+              onSuraOpen: lodeRecentSuras,
+              sura: SuraModel(index: index),
+            );
           },
           separatorBuilder: (context, index) {
             return Divider(indent: 45, endIndent: 45);

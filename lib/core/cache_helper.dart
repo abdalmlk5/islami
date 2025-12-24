@@ -14,4 +14,20 @@ class CacheHelper {
   static bool? getBool({required String key}) {
     return pref.getBool(key);
   }
+
+  static Future<bool> saveSurasList(int index) {
+    List<String> surasList = getSurasList() ?? [];
+    surasList.remove(index.toString());
+    surasList.insert(0, index.toString());
+    // another solution
+    // surasList = surasList.toSet().toList();
+    if (surasList.length > 5) {
+      surasList.removeLast();
+    }
+    return pref.setStringList("surasList", surasList);
+  }
+
+  static List<String>? getSurasList() {
+    return pref.getStringList("surasList");
+  }
 }
