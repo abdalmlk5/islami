@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/core/app_colors.dart';
+import 'package:islami/core/cache_helper.dart';
 
 import '../core/app_styles.dart';
 import 'Home/home_screen.dart';
@@ -65,14 +66,16 @@ class IntroScreen extends StatelessWidget {
       next: const Text("Next", style: AppStyles.primary20),
       showDoneButton: true,
       done: const Text("Done", style: AppStyles.primary20),
-      onDone: () {
+      onDone: () async {
+        await CacheHelper.saveBool(key: "introScreenFlag", value: true);
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       showBackButton: true,
       back: const Text("Back", style: AppStyles.primary20),
       showSkipButton: true,
       skip: const Text("Skip", style: AppStyles.primary20),
-      onSkip: () {
+      onSkip: () async {
+        await CacheHelper.saveBool(key: "introScreenFlag", value: true);
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       dotsDecorator: DotsDecorator(
