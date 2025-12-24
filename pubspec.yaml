@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.7
   introduction_screen: ^4.0.0
+  shared_preferences: ^2.5.4
 
 dev_dependencies:
   flutter_test:
@@ -204,7 +205,7 @@ flutter_native_splash:
 
     # hide notif bar on android. ios already hides it by default.
     # Has no effect in web since web has no notification bar.
-    #  fullscreen: true                # default false
+  #  fullscreen: true                # default false
   # if you dont want to hide notif bar, for android just set this to false,
   # but for ios, add this to your flutter main():
   # WidgetsFlutterBinding.ensureInitialized();
