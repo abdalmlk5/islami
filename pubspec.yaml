@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: ^2.4.7
   introduction_screen: ^4.0.0
   shared_preferences: ^2.5.4
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
   assets:
     - assets/images/
     - assets/files/Suras/
+    - assets/files/Hadeth/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -204,7 +206,7 @@ flutter_native_splash:
     #android_screen_orientation: sensorLandscape
 
     # hide notif bar on android. ios already hides it by default.
-    # Has no effect in web since web has no notification bar.
+  # Has no effect in web since web has no notification bar.
   #  fullscreen: true                # default false
   # if you dont want to hide notif bar, for android just set this to false,
   # but for ios, add this to your flutter main():

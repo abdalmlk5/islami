@@ -28,7 +28,6 @@ class SurasListItem extends StatelessWidget {
           SuraDetailsScreen.routeName,
           arguments: sura,
         );
-        print("done");
       },
       child: ListTile(
         contentPadding: EdgeInsets.zero,

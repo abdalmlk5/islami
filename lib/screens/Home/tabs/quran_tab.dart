@@ -49,14 +49,15 @@ class _QuranScreenState extends State<QuranScreen> {
     // TODO: implement initState
     super.initState();
     lodeRecentSuras();
-    fillSurasList(surasList);
-    filteredSurasList = surasList;
   }
 
   @override
   Widget build(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    fillSurasList(surasList);
+    filteredSurasList = surasList;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
